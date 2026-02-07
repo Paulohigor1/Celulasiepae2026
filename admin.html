@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Células</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="bg-orange">
+    <main class="page">
+      <header class="hero hero--small">
+        <h1>Admin</h1>
+        <p>Adicionar/editar/remover Células sem mexer em código</p>
+      </header>
+
+      <section class="panel">
+        <div class="panel__title">Login</div>
+
+        <form id="loginForm" class="form">
+          <label class="field">
+            <span>Usuário</span>
+            <input id="username" type="text" placeholder="admin" required />
+          </label>
+
+          <label class="field">
+            <span>Senha</span>
+            <input id="password" type="password" placeholder="••••••••" required />
+          </label>
+
+          <button class="btn btn--light" type="submit">Entrar</button>
+          <div id="authStatus" class="status"></div>
+        </form>
+
+        <hr class="sep"/>
+
+        <div class="panel__title">Nova Célula</div>
+        <form id="createForm" class="form">
+          <label class="field">
+            <span>Nome da Célula</span>
+            <input id="newName" type="text" placeholder="Ex: EFATÁ" required />
+          </label>
+
+          <label class="field">
+            <span>Endereço (texto completo)</span>
+            <input id="newAddress" type="text" placeholder="Ex: Rua Pedro Teixeira, 94 - Village, Angra dos Reis - RJ" required />
+          </label>
+
+          <details class="details">
+            <summary>Informar lat/lng manualmente (opcional)</summary>
+            <div class="row">
+              <label class="field">
+                <span>Latitude</span>
+                <input id="newLat" type="number" step="any" placeholder="-23.00" />
+              </label>
+              <label class="field">
+                <span>Longitude</span>
+                <input id="newLng" type="number" step="any" placeholder="-44.31" />
+              </label>
+            </div>
+            <div class="tiny">Se deixar vazio, o sistema geocodifica automaticamente.</div>
+          </details>
+
+          <button class="btn" type="submit">Adicionar</button>
+          <div id="createStatus" class="status"></div>
+        </form>
+
+        <hr class="sep"/>
+
+        <div class="panel__title">Células cadastradas</div>
+        <div id="list" class="list"></div>
+
+        <div class="tiny">
+          <button id="logoutBtn" class="btn btn--ghost" type="button">Sair</button>
+          <div style="margin-top:8px;"><a href="/index.html">Voltar</a></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./admin.js"></script>
+  </body>
+</html>

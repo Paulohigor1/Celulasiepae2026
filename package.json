@@ -1,0 +1,15 @@
+{
+  "name": "celulas-angra",
+  "version": "3.0.0",
+  "description": "Encontra a célula mais próxima em Angra dos Reis + Admin com login + SQLite + mapa embutido",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "sqlite3": "^5.1.7"
+  }
+}
