@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encontre a Célula Mais Próxima</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="bg-orange">
+    <main class="page">
+      <header class="hero">
+        <h1>Encontre a Célula<br/>Mais Próxima</h1>
+        <p>Digite seu endereço e descubra onde se reunir</p>
+      </header>
+
+      <section class="panel">
+        <div class="panel__title">Seu Endereço</div>
+
+        <form id="form" class="form">
+          <label class="field">
+            <span>Rua</span>
+            <input id="street" type="text" placeholder="Ex: Rua da Praia" required />
+          </label>
+
+          <label class="field">
+            <span>Número</span>
+            <input id="number" type="text" placeholder="Ex: 123" required />
+          </label>
+
+          <label class="field">
+            <span>Bairro (opcional)</span>
+            <input id="neighborhood" type="text" placeholder="Ex: Centro" />
+          </label>
+
+          <button id="btn" class="btn" type="submit">Encontrar Célula</button>
+        </form>
+
+        <div id="status" class="status" aria-live="polite"></div>
+
+        <div id="result" class="result hidden">
+          <div class="result__card">
+            <div class="result__label">Célula mais próxima</div>
+            <div id="cellName" class="result__title"></div>
+            <div id="cellAddress" class="result__addr"></div>
+
+            <div class="chips">
+              <div class="chip">Distância: <strong id="distance"></strong> km</div>
+            </div>
+
+            <div class="mapwrap">
+              <iframe id="mapFrame" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <div class="actions">
+              <a id="mapsLink" class="btn btn--ghost" target="_blank" rel="noreferrer">Ver no mapa</a>
+              <button id="newSearch" class="btn btn--light" type="button">Nova busca</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tiny">
+          Admin: <a href="/admin.html">gerenciar células</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
